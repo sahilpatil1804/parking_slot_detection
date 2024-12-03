@@ -14,7 +14,6 @@ import cvzone
 import os
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
 # Define the transformation pipeline
 transform = transforms.Compose([
     transforms.Resize(256),
@@ -25,8 +24,9 @@ transform = transforms.Compose([
 
 # Load the trained model
 model = mAlexNet().to(device)
-model.load_state_dict(torch.load('model.pth'))  # Load trained weights
+model.load_state_dict(torch.load('model.pth', weights_only=True))  # Load trained weights
 model.eval()  # Set the model to evaluation mode
+
 
 # Open the image file
 img = Image.open("imgfile3.jpg")
