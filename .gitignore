@@ -1,0 +1,48 @@
+# Dataset
+LABELS/
+PATCHES/
+CNRPark-Patches-150x150/
+CNR-EXT_FULL_IMAGE_1000x750/
+PKLot/
+splits/
+trained_model/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+utils/__pycache__/
+model/__pycache__/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# pyenv
+.python-version
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
