@@ -1,0 +1,27 @@
+Import necessary libraries: OpenCV (cv2) for computer vision, Pandas (pd) for data manipulation, NumPy (np) for numerical operations, Ultralytics for YOLO implementation, and time for time-related functions.
+
+Load the YOLO model using the Ultralytics library. The model is loaded from the 'yolov8s.pt' file.
+
+Define a callback function RGB that prints the BGR values of the pixel when the mouse is moved over the window named 'RGB.' This callback is associated with the named window 'RGB' using cv2.setMouseCallback.
+
+Create a named window 'RGB' and set the mouse callback function to the previously defined RGB function.
+
+Open a video capture object to read frames from the video file 'parking1.mp4.'
+
+Open a file named 'clz.txt' in read mode and read its content. Split the content into a list named class_list using newline characters as delimiters.
+
+Define polygonal areas for each parking space. Each area is represented as a list of coordinates.
+
+Start an infinite loop to process frames from the video stream. Resize each frame to (1020, 500) pixels.
+
+Use the YOLO model to predict objects in the frame. Extract bounding box coordinates and class indices. Convert the results to a Pandas DataFrame named px.
+
+Iterate through each detected object in the frame. Extract bounding box coordinates, class index, and class label. If the class label is 'car,' calculate the centroid (cx, cy) and check if it is within each parking area. Update the visualization by drawing rectangles, circles, and annotations.
+
+Count the number of cars in each parking area and calculate the total number of occupied spaces (o) and available spaces (space).
+
+Visualize the status of each parking space by drawing polygons, rectangles, and annotations based on the number of detected cars in each area.
+
+Display the number of available parking spaces in the frame and show the frame in the 'RGB' window. If the 'Esc' key is pressed, exit the loop.
+
+Release the video capture object and close all OpenCV windows when the script is finished.
